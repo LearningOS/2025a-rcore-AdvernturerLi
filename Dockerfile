@@ -11,12 +11,11 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install basic tools
 RUN apt-get update && \
-    apt-get install -y \
-    curl \
-    git \
-    python3 \
-    wget \
-    xz-utils
+    apt-get install -y curl git python3 wget xz-utils openssh-client
+
+#Git
+RUN git config --global user.name "AdvernturerLi"
+RUN git config --global user.email "1600373542@qq.com"
 
 # Set working directory
 WORKDIR /root
@@ -81,3 +80,4 @@ WORKDIR /root
 
 # Default command
 CMD ["/bin/bash"]
+
