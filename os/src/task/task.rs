@@ -9,6 +9,8 @@ pub struct TaskControlBlock {
     pub task_status: TaskStatus,
     /// The task context
     pub task_cx: TaskContext,
+    /// Count of each system call executed by this task
+    pub syscall_times: [usize; 512],
 }
 
 /// The status of a task
